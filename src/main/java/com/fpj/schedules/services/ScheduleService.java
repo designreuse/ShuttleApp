@@ -1,11 +1,10 @@
-package com.fpj.schedules.dao;
+package com.fpj.schedules.services;
 
 import java.util.List;
 
 import com.fpj.models.Schedule;
 
-public interface ScheduleDao {
-
+public interface ScheduleService {
 	public void add(Schedule schedule);
 	public void update(Schedule schedule);
 	public Schedule get(Integer schedule_id);
