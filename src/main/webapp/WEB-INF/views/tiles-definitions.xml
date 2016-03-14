@@ -6,11 +6,19 @@
 
 	<!-- BASE -->
 	
+	<definition name="roles" template="/WEB-INF/views/roles/index/template.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
+	</definition>
+	
+	
 	<definition name="home" template="/WEB-INF/views/home/index/template.jsp">
 		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
 		<put-attribute name="header" value="/WEB-INF/views/application/_header.jsp" />
 		<put-attribute name="sidebar" value="/WEB-INF/views/home/index/_sidebar.jsp" />
 	</definition>
+	
+	
 	
 	<definition name="login" template="/WEB-INF/views/login/index/template.jsp">
 		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />

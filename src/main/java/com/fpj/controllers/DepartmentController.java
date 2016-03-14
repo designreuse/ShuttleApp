@@ -30,6 +30,7 @@ public class DepartmentController {
 		List<Dept> depts = deptService.getAll();		
 		modelAndView.addObject("dept", new Dept());
 		modelAndView.addObject("depts", depts);
+		modelAndView.addObject("createLink", "/departments/create");
 		return modelAndView;
 	}
 	

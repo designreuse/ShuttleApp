@@ -21,23 +21,19 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	public void update(Reservation reservation) {
-		// TODO Auto-generated method stub
-		
+		reservationDao.update(reservation);
 	}
 
 	public Reservation get(Integer reservation_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return reservationDao.get(reservation_id);
 	}
 
 	public void delete(Integer reservation_id) {
-		// TODO Auto-generated method stub
-		
+		reservationDao.delete(reservation_id);
 	}
 
 	public List<Reservation> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return reservationDao.getAll();
 	}
 
 }

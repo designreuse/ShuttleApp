@@ -29,6 +29,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 //import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
 
@@ -110,7 +111,7 @@ public class Config extends WebMvcConfigurerAdapter {
 		viewResolver.setOrder(0);
 		return viewResolver;
 	}
-/*
+
 	@Bean
 	public TilesConfigurer setupTilesConfigurer() {
 		TilesConfigurer tilesConfigurer = new TilesConfigurer();
@@ -118,7 +119,7 @@ public class Config extends WebMvcConfigurerAdapter {
 		tilesConfigurer
 				.setDefinitions(new String[] { "/views/tiles-definitions.xml" });
 		return tilesConfigurer;
-	}*/
+	}
 
 	@Bean 
 	public ResourceBundleMessageSource resourceBundleMessageSource(){

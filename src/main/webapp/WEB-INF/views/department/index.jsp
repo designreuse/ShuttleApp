@@ -166,7 +166,7 @@
 					</div>
 					<!-- /.col-lg-12 -->
 				</div>
-				<form:form method="POST" modelAttribute="dept" action="${url}/departments/create">
+				<form:form method="POST" modelAttribute="dept" action="${url}${createLink }">
 					<div class="row padding-20">
 						<div class="col-md-8">
 							<label>Department Name:</label> 
