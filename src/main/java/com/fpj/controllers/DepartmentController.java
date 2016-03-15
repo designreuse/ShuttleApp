@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fpj.depts.services.DeptService;
@@ -20,6 +22,8 @@ public class DepartmentController {
 	private static String INDEX_PAGE = "department/index";
 	private static String ADD_PAGE = "department/add";
 	
+	private static String CREATE_LINK = "/departments/create";
+	
 	@Autowired
 	private DeptService deptService;
 	
@@ -30,7 +34,9 @@ public class DepartmentController {
 		List<Dept> depts = deptService.getAll();		
 		modelAndView.addObject("dept", new Dept());
 		modelAndView.addObject("depts", depts);
-		modelAndView.addObject("createLink", "/departments/create");
+		modelAndView.addObject("createLink", CREATE_LINK);
+		
+		
 		return modelAndView;
 	}
 	
@@ -41,8 +47,25 @@ public class DepartmentController {
 	
 	@RequestMapping(value="/departments/create")
 	public ModelAndView create(@ModelAttribute Dept dept) throws IOException{
-		ModelAndView modelAndView = new ModelAndView(INDEX_PAGE);
+		ModelAndView modelAndView = new ModelAndView("redirect:/departments");
 		deptService.add(dept);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/departments/delete/{dept_id}", method=RequestMethod.POST)
+	public ModelAndView delete(@PathVariable Integer dept_id) throws IOException{
+		ModelAndView modelAndView = new ModelAndView("redirect:/departments");
+		deptService.delete(dept_id);
+		String message = "Successfully deleted.";
+        modelAndView.addObject("message", message);
+		return modelAndView;
+	}
+	
+	public ModelAndView update(@ModelAttribute Dept dept, @PathVariable Integer dept_id) throws IOException{
+		ModelAndView modelAndView = new ModelAndView("redirect:/departments");
+		deptService.update(dept);
+		String message = "Successfully updated.";
+        modelAndView.addObject("message", message);
 		return modelAndView;
 	}
 }
