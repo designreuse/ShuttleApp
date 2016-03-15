@@ -1,5 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+
+<div class="row">
+	<div class="col-md-12">
+		<h2 class="page-header">${table_head }</h2>
+	</div>
+</div>
+
+<button class="btn btn-primary" data-toggle="modal"
+	data-target="#myModal">Add Department</button>
+
 <div class="row padding-20">
 	<div class="col-lg-12">
 		<!-- /.panel-heading -->
@@ -8,8 +22,8 @@
 				id="scheduleTable">
 				<thead>
 					<tr>
-						<th>Department ID</th>
-						<th>Department Name</th>
+						<th>ID</th>
+						<th>Name</th>
 						<th>Actions</th>
 					</tr>
 				</thead>

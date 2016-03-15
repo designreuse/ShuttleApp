@@ -11,6 +11,8 @@
 		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
 		<put-attribute name="navbar" value="/WEB-INF/views/application/_navbar.jsp" />
 		<put-attribute name="table" value="/WEB-INF/views/application/_table.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/views/application/_foot.jsp" />
+		<put-attribute name="add_modal" value="/WEB-INF/views/application/modals/add_modal.jsp" />
 	</definition>
 	
 	<definition name="home" template="/WEB-INF/views/home/index/template.jsp">
