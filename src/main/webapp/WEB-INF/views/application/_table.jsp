@@ -12,7 +12,7 @@
 </div>
 
 <button class="btn btn-primary" data-toggle="modal"
-	data-target="#myModal">Add Department</button>
+	data-target="#addModal">${add_button }</button>
 
 <div class="row padding-20">
 	<div class="col-lg-12">
@@ -22,28 +22,15 @@
 				id="scheduleTable">
 				<thead>
 					<tr>
-						<th>ID</th>
+						<!-- <th>ID</th> -->
 						<th>Name</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr class="odd gradeX">
-						<td>D1</td>
+						<!-- <td>D1</td>  -->
 						<td>IRD-EIGHL</td>
-						<td>
-							<button type="button" class="btn btn-success"
-								data-dismiss="modal">
-								<i class="fa fa-edit fa-fw"></i>
-							</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">
-								<i class="fa fa-times fa-fw"></i>
-							</button>
-						</td>
-					</tr>
-					<tr class="gradeU">
-						<td>D2</td>
-						<td>IRD-ACE</td>
 						<td>
 							<button type="button" class="btn btn-success"
 								data-dismiss="modal">
