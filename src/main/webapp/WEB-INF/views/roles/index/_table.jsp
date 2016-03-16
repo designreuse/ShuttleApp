@@ -28,28 +28,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					
 					<tr class="odd gradeX">
 						<!-- <td>D1</td>  -->
 						<td>IRD-EIGHL</td>
-						<td>
-							<button type="button" class="btn btn-success"
-								data-dismiss="modal">
-								<i class="fa fa-edit fa-fw"></i>
-							</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">
-								<i class="fa fa-times fa-fw"></i>
-							</button>
+						<td><tiles:insertDefinition name="table_buttons"></tiles:insertDefinition>
 						</td>
 					</tr>
-					<c:forEach var="dept" items="${depts}">
+					<c:forEach var="role" items="${roles}">
 						<tr class="gradeU">
-							<!-- <td>D${dept.dept_id }</td>  -->
-							<td>${dept.dept_name }</td>
+							<!-- <td>D${role.role_id }</td>  -->
+							<td>${role.role_name }</td>
+							<td><tiles:insertDefinition name="table_buttons"></tiles:insertDefinition>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
-				
+
 			</table>
 		</div>
 		<!-- /.panel -->

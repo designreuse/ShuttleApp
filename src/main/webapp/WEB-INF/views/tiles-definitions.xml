@@ -6,13 +6,18 @@
 
 	<!-- BASE -->
 	
-	<definition name="adminpage" template="/WEB-INF/views/application/adminpage/template.jsp">
+	<definition name="roles" template="/WEB-INF/views/application/adminpage/template.jsp">
 		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
 		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
 		<put-attribute name="navbar" value="/WEB-INF/views/application/_navbar.jsp" />
-		<put-attribute name="table" value="/WEB-INF/views/application/_table.jsp" />
+		<put-attribute name="table" value="/WEB-INF/views/roles/index/_table.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/views/application/_foot.jsp" />
-		<put-attribute name="add_modal" value="/WEB-INF/views/application/modals/add_modal.jsp" />
+		<put-attribute name="add_modal" value="/WEB-INF/views/roles/modals/add_modal.jsp" />
+		<put-attribute name="table_buttons" value="/WEB-INF/views/application/_table_buttons.jsp" />
+	</definition>
+	
+	<definition name="table_buttons" template="/WEB-INF/views/application/_table_buttons.jsp">
+	
 	</definition>
 	
 	<definition name="home" template="/WEB-INF/views/home/index/template.jsp">

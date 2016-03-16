@@ -22,6 +22,7 @@ public class Car {
 	private Integer capacity;
 	private String color;
 	private String model;
+	
 	public Integer getCar_id() {
 		return car_id;
 	}

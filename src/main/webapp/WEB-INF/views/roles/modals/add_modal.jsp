@@ -15,18 +15,20 @@
 					aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="myModalLabel">${add_button }</h4>
 			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-8">
-						<label>Name:</label> <input class="form-control"
-							placeholder="Name">
+			<form:form method="POST" modelAttribute="role" action="${url}${createLink }">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8">
+							<label>Role Name:</label> <form:input class="form-control"
+								placeholder="New Name" path="role_name"></form:input>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary">Save changes</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-			</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				</div>
+			</form:form>
 		</div>
 		<!-- /.modal-content -->
 	</div>

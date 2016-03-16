@@ -40,8 +40,8 @@ public class RoleController {
 		modelAndView.addObject("add_button", ADD_BUTTON);
 		
 		// Actual data
-		modelAndView.addObject("item_set", roles);
-		modelAndView.addObject("new_item", new Role());
+		modelAndView.addObject("roles", roles);
+		modelAndView.addObject("role", new Role());
 		modelAndView.addObject("createLink", CREATE_LINK);
 		return modelAndView;
 	}
