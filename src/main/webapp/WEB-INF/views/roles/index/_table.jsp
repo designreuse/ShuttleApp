@@ -23,17 +23,11 @@
 				<thead>
 					<tr>
 						<!-- <th>ID</th> -->
-						<th>Name</th>
+						<th>Role</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="odd gradeX">
-						<!-- <td>D1</td>  -->
-						<td>IRD-EIGHL</td>
-						<td><tiles:insertDefinition name="table_buttons"></tiles:insertDefinition>
-						</td>
-					</tr>
 					<c:forEach var="role" items="${roles}">
 						<tr class="gradeU">
 							<!-- <td>D${role.role_id }</td>  -->
@@ -50,3 +44,4 @@
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
+

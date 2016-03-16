@@ -22,6 +22,9 @@ public class DepartmentController {
 	private static String INDEX_PAGE = "department/index";
 	private static String ADD_PAGE = "department/add";
 	
+	private static String TABLE_HEAD = "Manage Departments";
+	private static String ADD_BUTTON = "Add Department";
+	
 	private static String CREATE_LINK = "/departments/create";
 	
 	@Autowired
@@ -30,12 +33,16 @@ public class DepartmentController {
 	@RequestMapping(value="/departments")
 	public ModelAndView index(HttpServletResponse response) throws IOException{
 		ModelAndView modelAndView = new ModelAndView(INDEX_PAGE);
+		List<Dept> depts = deptService.getAll();
 		
-		List<Dept> depts = deptService.getAll();		
+		// Just Text
+		modelAndView.addObject("table_head", TABLE_HEAD);
+		modelAndView.addObject("add_button", ADD_BUTTON);
+		
+		// Actual data
 		modelAndView.addObject("dept", new Dept());
 		modelAndView.addObject("depts", depts);
 		modelAndView.addObject("createLink", CREATE_LINK);
-		
 		
 		return modelAndView;
 	}

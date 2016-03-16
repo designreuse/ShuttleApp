@@ -5,19 +5,27 @@
 <tiles-definitions>
 
 	<!-- BASE -->
-	
 	<definition name="roles" template="/WEB-INF/views/application/adminpage/template.jsp">
 		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
 		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
 		<put-attribute name="navbar" value="/WEB-INF/views/application/_navbar.jsp" />
-		<put-attribute name="table" value="/WEB-INF/views/roles/index/_table.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/views/application/_foot.jsp" />
-		<put-attribute name="add_modal" value="/WEB-INF/views/roles/modals/add_modal.jsp" />
 		<put-attribute name="table_buttons" value="/WEB-INF/views/application/_table_buttons.jsp" />
+		<put-attribute name="table" value="/WEB-INF/views/roles/index/_table.jsp" />
+		<put-attribute name="add_modal" value="/WEB-INF/views/roles/modals/add_modal.jsp" />
+	</definition>
+	
+	<definition name="departments" template="/WEB-INF/views/application/adminpage/template.jsp">
+		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
+		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
+		<put-attribute name="navbar" value="/WEB-INF/views/application/_navbar.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/views/application/_foot.jsp" />
+		<put-attribute name="table_buttons" value="/WEB-INF/views/application/_table_buttons.jsp" />
+		<put-attribute name="table" value="/WEB-INF/views/department/index/_table.jsp" />
+		<put-attribute name="add_modal" value="/WEB-INF/views/department/modals/add_modal.jsp" />
 	</definition>
 	
 	<definition name="table_buttons" template="/WEB-INF/views/application/_table_buttons.jsp">
-	
 	</definition>
 	
 	<definition name="home" template="/WEB-INF/views/home/index/template.jsp">
@@ -25,27 +33,6 @@
 		<put-attribute name="header" value="/WEB-INF/views/application/_header.jsp" />
 		<put-attribute name="sidebar" value="/WEB-INF/views/home/index/_sidebar.jsp" />
 	</definition>
-	
-	<definition name="login" template="/WEB-INF/views/login/index/template.jsp">
-		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
-		<put-attribute name="header" value="/WEB-INF/views/application/_header.jsp" />
-		<put-attribute name="login_form" value="/WEB-INF/views/login/index/_login-form.jsp" />
-	</definition>
-	
-	<definition name="employeeIndex" template="/WEB-INF/views/employee/index/template.jsp">
-		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
-		<put-attribute name="sidebar" value="/WEB-INF/views/home/index/_sidebar.jsp" />
-		<put-attribute name="header" value="/WEB-INF/views/application/_header.jsp" />
-		<put-attribute name="body" value="/WEB-INF/views/employee/index/_body.jsp" />
-	</definition>
-	
-	<definition name="employeeAdd" template="/WEB-INF/views/employee/add/template.jsp">
-		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
-		<put-attribute name="sidebar" value="/WEB-INF/views/home/index/_sidebar.jsp" />
-		<put-attribute name="header" value="/WEB-INF/views/application/_header.jsp" />
-		<put-attribute name="body" value="/WEB-INF/views/employee/add/_body.jsp" />
-	</definition>
-	
 	
 	
 </tiles-definitions>
