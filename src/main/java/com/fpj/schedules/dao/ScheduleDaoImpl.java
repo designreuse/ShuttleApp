@@ -43,7 +43,9 @@ public class ScheduleDaoImpl implements ScheduleDao {
 	}
 
 	public void delete(Integer schedule_id) {
-		getCurrentSession().delete(schedule_id);
+		Schedule schedule = get(schedule_id);
+		if(schedule != null)
+			getCurrentSession().delete(schedule);
 		
 	}
 

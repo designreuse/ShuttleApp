@@ -26,6 +26,7 @@ public class DepartmentController {
 	private static String ADD_BUTTON = "Add Department";
 	
 	private static String CREATE_LINK = "/departments/create";
+	private static String DELETE_LINK = "/departments/delete";
 	
 	@Autowired
 	private DeptService deptService;
@@ -43,6 +44,7 @@ public class DepartmentController {
 		modelAndView.addObject("dept", new Dept());
 		modelAndView.addObject("depts", depts);
 		modelAndView.addObject("createLink", CREATE_LINK);
+		modelAndView.addObject("deleteLink", DELETE_LINK);
 		
 		return modelAndView;
 	}
@@ -59,7 +61,7 @@ public class DepartmentController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/departments/delete/{dept_id}", method=RequestMethod.POST)
+	@RequestMapping(value="/departments/delete/{dept_id}", method=RequestMethod.GET)
 	public ModelAndView delete(@PathVariable Integer dept_id) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/departments");
 		deptService.delete(dept_id);

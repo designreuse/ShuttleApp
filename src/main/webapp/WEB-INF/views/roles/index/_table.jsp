@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<c:set var="url">${pageContext.request.contextPath} </c:set>
 
 <div class="row">
 	<div class="col-md-12">
@@ -32,7 +33,14 @@
 						<tr class="gradeU">
 							<!-- <td>D${role.role_id }</td>  -->
 							<td>${role.role_name }</td>
-							<td><tiles:insertDefinition name="table_buttons"></tiles:insertDefinition>
+							<td>
+								<button type="button" class="btn btn-xs btn-success"
+									data-dismiss="modal">
+									<i class="fa fa-edit fa-fw"></i>
+								</button> <a href="${url}${deleteLink }/${role.role_id}" type="button"
+								class="btn btn-xs btn-danger" data-dismiss="modal"> <i
+									class="fa fa-times fa-fw"></i>
+							</a>
 							</td>
 						</tr>
 					</c:forEach>

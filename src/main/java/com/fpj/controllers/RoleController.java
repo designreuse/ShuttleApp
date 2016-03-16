@@ -26,6 +26,7 @@ public class RoleController {
 	private static String ADD_BUTTON = "Add Role";
 	
 	private static String CREATE_LINK = "/roles/create";
+	private static String DELETE_LINK = "/roles/delete";
 	
 	@Autowired
 	private RoleService roleService;
@@ -43,6 +44,7 @@ public class RoleController {
 		modelAndView.addObject("roles", roles);
 		modelAndView.addObject("role", new Role());
 		modelAndView.addObject("createLink", CREATE_LINK);
+		modelAndView.addObject("deleteLink", DELETE_LINK);
 		return modelAndView;
 	}
 	
@@ -58,7 +60,7 @@ public class RoleController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/roles/delete/{dept_id}", method=RequestMethod.POST)
+	@RequestMapping(value="/roles/delete/{role_id}", method=RequestMethod.GET)
 	public ModelAndView delete(@PathVariable Integer role_id) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/roles");
 		roleService.delete(role_id);

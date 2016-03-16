@@ -38,7 +38,8 @@ public class RoleDaoImpl implements RoleDao{
 	}
 
 	public void delete(Integer role_id) {
-		getCurrentSession().delete(role_id);
+		Role role = get(role_id);
+		getCurrentSession().delete(role);
 	}
 
 	@SuppressWarnings("unchecked")
