@@ -14,8 +14,6 @@
 					<li><a href="CreateReservation.html">Create Reservation</a></li>
 					<li><a href="ViewReservation.html">View Reservation</a></li>
 				</ul> <!-- /.nav-second-level --></li>
-			<li><a class="main-panel" href="MyProfile.html"><i
-					class="fa fa-fw"></i>My Profile</a></li>
 			<li><a class="main-panel" href="#"><i class="fa fa-fw"></i>Reports<span
 					class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
