@@ -14,7 +14,7 @@
 			<span class="icon-bar"></span> <span class="icon-bar"></span> 
 		</button>
 		<img src="${url}/assets/rsrc/logo.jpg" class="logo pull-left">
-		<p class="navbar-brand header-brand" href="index.html">
+		<a class="navbar-brand header-brand" href="index.html">
 			Corporate Intranet</a>
 	</div>
 </div>
@@ -35,5 +35,5 @@
 		</a></li>
 	</ul>
 </div> 
-</br>
+
 <!-- /.navbar-static-side -->
