@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fpj.cars.services.CarService;
 import com.fpj.models.Car;
-import com.fpj.models.Schedule;
 
 @Controller
 public class CarController {
@@ -23,8 +22,8 @@ public class CarController {
 	private static String INDEX_PAGE = "cars/index";
 	private static String ADD_PAGE = "cars/add";
 	
-	private static String TABLE_HEAD = "Manage Departments";
-	private static String ADD_BUTTON = "Add Department";
+	private static String TABLE_HEAD = "Manage Vehicles";
+	private static String ADD_BUTTON = "Add Vehicles";
 	
 	private static String CREATE_LINK = "/cars/create";
 	private static String DELETE_LINK = "/cars/delete";
@@ -59,14 +58,14 @@ public class CarController {
 	
 	@RequestMapping(value="/cars/create")
 	public ModelAndView create(@ModelAttribute Car car) throws IOException{
-		ModelAndView modelAndView = new ModelAndView("redirect:/schedules");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cars");
 		carService.add(car);
 		return modelAndView;
 	}
 	
 	@RequestMapping(value="/cars/delete/{dept_id}", method=RequestMethod.GET)
 	public ModelAndView delete(@PathVariable Integer car_id) throws IOException{
-		ModelAndView modelAndView = new ModelAndView("redirect:/schedules");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cars");
 		carService.delete(car_id);
 		String message = "Successfully deleted.";
         modelAndView.addObject("message", message);
@@ -74,7 +73,7 @@ public class CarController {
 	}
 	
 	public ModelAndView update(@ModelAttribute Car car, @PathVariable Integer car_id) throws IOException{
-		ModelAndView modelAndView = new ModelAndView("redirect:/schedules");
+		ModelAndView modelAndView = new ModelAndView("redirect:/cars");
 		carService.update(car);
 		String message = "Successfully updated.";
         modelAndView.addObject("message", message);
