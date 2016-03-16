@@ -1,6 +1,7 @@
 package com.fpj.cars.dao;
 
-import java.util.List;
+import java.util.List
+;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.fpj.models.Car;
-import com.fpj.models.Dept;
 
 @Repository
 public class CarDaoImpl implements CarDao{

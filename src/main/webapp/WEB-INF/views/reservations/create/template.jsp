@@ -15,6 +15,9 @@
 
 <body>
 	<div id="wrapper">
+		<div class="row">
+			<div class="col-md-offset-10 col-md-2">Login Placeholder</div>
+		</div>
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-static-top rowHeader"
 			role="navigation" style="margin-bottom: 0">

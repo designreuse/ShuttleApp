@@ -5,9 +5,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.fpj.models.Role;
 
+@Repository
 public class RoleDaoImpl implements RoleDao{
 
 	@Autowired
@@ -36,7 +38,8 @@ public class RoleDaoImpl implements RoleDao{
 	}
 
 	public void delete(Integer role_id) {
-		getCurrentSession().delete(role_id);
+		Role role = get(role_id);
+		getCurrentSession().delete(role);
 	}
 
 	@SuppressWarnings("unchecked")

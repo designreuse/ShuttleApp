@@ -1,6 +1,7 @@
 package com.fpj.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,12 +17,14 @@ model varchar(255)
 public class Car {
 
 	@Id
+	@GeneratedValue
 	private Integer car_id;
 	
 	private String plate_num;
 	private Integer capacity;
 	private String color;
 	private String model;
+	
 	public Integer getCar_id() {
 		return car_id;
 	}

@@ -1,6 +1,7 @@
 package com.fpj.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class Role {
 
 	@Id 
+	@GeneratedValue
 	private Integer role_id;
 	
 	private String role_name;

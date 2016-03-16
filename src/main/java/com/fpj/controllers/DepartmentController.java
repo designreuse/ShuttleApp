@@ -22,7 +22,12 @@ public class DepartmentController {
 	private static String INDEX_PAGE = "department/index";
 	private static String ADD_PAGE = "department/add";
 	
+	private static String TABLE_HEAD = "Manage Departments";
+	private static String ADD_BUTTON = "Add Department";
+	
 	private static String CREATE_LINK = "/departments/create";
+	private static String DELETE_LINK = "/departments/delete";
+	private static String UPDATE_LINK = "/departments/update";
 	
 	@Autowired
 	private DeptService deptService;
@@ -30,12 +35,18 @@ public class DepartmentController {
 	@RequestMapping(value="/departments")
 	public ModelAndView index(HttpServletResponse response) throws IOException{
 		ModelAndView modelAndView = new ModelAndView(INDEX_PAGE);
+		List<Dept> depts = deptService.getAll();
 		
-		List<Dept> depts = deptService.getAll();		
+		// Just Text
+		modelAndView.addObject("table_head", TABLE_HEAD);
+		modelAndView.addObject("add_button", ADD_BUTTON);
+		
+		// Actual data
 		modelAndView.addObject("dept", new Dept());
 		modelAndView.addObject("depts", depts);
 		modelAndView.addObject("createLink", CREATE_LINK);
-		
+		modelAndView.addObject("deleteLink", DELETE_LINK);
+		modelAndView.addObject("updateLink", UPDATE_LINK);
 		
 		return modelAndView;
 	}
@@ -52,7 +63,7 @@ public class DepartmentController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/departments/delete/{dept_id}", method=RequestMethod.POST)
+	@RequestMapping(value="/departments/delete/{dept_id}", method=RequestMethod.GET)
 	public ModelAndView delete(@PathVariable Integer dept_id) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/departments");
 		deptService.delete(dept_id);
