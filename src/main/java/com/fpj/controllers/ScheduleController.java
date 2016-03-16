@@ -72,6 +72,7 @@ public class ScheduleController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value="/schedules/update/{role_id}", method=RequestMethod.GET)
 	public ModelAndView update(@ModelAttribute Schedule schedule, @PathVariable Integer dept_id) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/schedules");
 		scheduleService.update(schedule);
