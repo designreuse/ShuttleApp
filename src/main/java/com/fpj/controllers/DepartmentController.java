@@ -27,6 +27,7 @@ public class DepartmentController {
 	
 	private static String CREATE_LINK = "/departments/create";
 	private static String DELETE_LINK = "/departments/delete";
+	private static String UPDATE_LINK = "/departments/update";
 	
 	@Autowired
 	private DeptService deptService;
@@ -45,6 +46,7 @@ public class DepartmentController {
 		modelAndView.addObject("depts", depts);
 		modelAndView.addObject("createLink", CREATE_LINK);
 		modelAndView.addObject("deleteLink", DELETE_LINK);
+		modelAndView.addObject("updateLink", UPDATE_LINK);
 		
 		return modelAndView;
 	}
