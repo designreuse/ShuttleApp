@@ -9,7 +9,7 @@ public interface CarDao {
 
 	public void add(Car car);
 	public void update(Car car);
-	public Car get(Integer car_id);
-	public void delete(Integer car_id);
+	public Car get(String plate_num);
+	public void delete(String plate_num);
 	public List<Car> getAll();
 }

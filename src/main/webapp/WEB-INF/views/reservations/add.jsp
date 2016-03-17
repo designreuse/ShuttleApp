@@ -2,4 +2,4 @@
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 
-<tiles:insertDefinition name="reservations"></tiles:insertDefinition>
+<tiles:insertDefinition name="reservations_create"></tiles:insertDefinition>

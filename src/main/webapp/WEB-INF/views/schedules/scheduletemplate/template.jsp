@@ -11,33 +11,6 @@
 
 <head>
 <tiles:insertAttribute name="head"></tiles:insertAttribute>
-<script>
-	$(document).ready(function() {
-
-		$("#showFrom").hide().css("visibility", "hidden");
-		$("#showTo").hide().css("visibility", "hidden");
-		console.log("here");
-		$("#occurence").change(function() {
-			console.log("hahaha" + $(this).val());
-			if ($(this).val() == "once") {
-				$("#showFrom").hide().css("visibility", "hidden");
-				$("#showTo").hide().css("visibility", "hidden");
-				$("#showSingle").show().css("visibility", "visible");
-			} else if ($(this).val() == "multiple") {
-				$("#showFrom").show().css("visibility", "visible");
-				$("#showTo").show().css("visibility", "visible");
-				$("#showSingle").hide().css("visibility", "hidden");
-			}
-
-		});
-		//$("#hide").click(function(){
-
-		//});
-		//$("#show").click(function(){
-
-	});
-</script>
-
 </head>
 
 <body>
@@ -87,7 +60,33 @@
 				<!-- /#page-wrapper -->
 			</div>
 		</div>
-		<tiles:insertAttribute name="foot"></tiles:insertAttribute>
+	</div>
+	<tiles:insertAttribute name="foot"></tiles:insertAttribute>
+	<script>
+			$(document).ready(function() {
+				$("#showFrom").hide().css("visibility", "hidden");
+				$("#showTo").hide().css("visibility", "hidden");
+				console.log("here");
+				$("#occurence").change(function() {
+					console.log("hahaha" + $(this).val());
+					if ($(this).val() == "once") {
+						$("#showFrom").hide().css("visibility", "hidden");
+						$("#showTo").hide().css("visibility", "hidden");
+						$("#showSingle").show().css("visibility", "visible");
+					} else if ($(this).val() == "multiple") {
+						$("#showFrom").show().css("visibility", "visible");
+						$("#showTo").show().css("visibility", "visible");
+						$("#showSingle").hide().css("visibility", "hidden");
+					}
+
+				});
+				//$("#hide").click(function(){
+
+				//});
+				//$("#show").click(function(){
+
+			});
+		</script>
 </body>
 
 </html>

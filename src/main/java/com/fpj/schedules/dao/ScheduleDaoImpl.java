@@ -1,6 +1,5 @@
 package com.fpj.schedules.dao;
 
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -26,14 +25,27 @@ public class ScheduleDaoImpl implements ScheduleDao {
 
 	public void update(Schedule schedule) {
 		Integer schedule_id = schedule.getSched_id();
-		Date dropoff_time = schedule.getDropoff_time();
+		String dropoff_time = schedule.getDropoff_time();
+		String dropoff_date = schedule.getDropoff_date();
 		String from_location = schedule.getFrom_location();
 		String to_location = schedule.getTo_location();
+		String plate_num = schedule.getPlate_num();
+		
+		java.text.SimpleDateFormat stf = 
+		     new java.text.SimpleDateFormat("HH:mm");
+
+		java.text.SimpleDateFormat sdf = 
+			     new java.text.SimpleDateFormat("MM:dd:yyyy");
+		
+		String dropoff_time_str = stf.format(dropoff_time);
+		String dropoff_date_str = sdf.format(dropoff_date);
 		
 		Schedule schedule_update = get(schedule_id);
-		schedule_update.setDropoff_time(dropoff_time);
+		schedule_update.setDropoff_time(dropoff_time_str);
 		schedule_update.setFrom_location(from_location);
 		schedule_update.setTo_location(to_location);
+		schedule_update.setDropoff_date(dropoff_date_str);
+		schedule_update.setPlate_num(plate_num);
 		
 		getCurrentSession().update(schedule_update);
 	}
