@@ -60,8 +60,9 @@
 				<!-- /#page-wrapper -->
 			</div>
 		</div>
-		<tiles:insertAttribute name="foot"></tiles:insertAttribute>
-		<script>
+	</div>
+	<tiles:insertAttribute name="foot"></tiles:insertAttribute>
+	<script>
 			$(document).ready(function() {
 				$("#showFrom").hide().css("visibility", "hidden");
 				$("#showTo").hide().css("visibility", "hidden");

@@ -1,13 +1,18 @@
 package com.fpj.controllers;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +42,13 @@ public class ScheduleController {
 	
 	@Autowired
 	private CarService carService;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+	    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+	    sdf.setLenient(true);
+	    binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
+	}
 	
 	@RequestMapping(value="/schedules")
 	public ModelAndView index(HttpServletResponse response) throws IOException{
@@ -69,7 +81,7 @@ public class ScheduleController {
 		return new ModelAndView(ADD_PAGE);
 	}
 	
-	@RequestMapping(value="/schedules/create")
+	@RequestMapping(value="/schedules/create", method=RequestMethod.POST)
 	public ModelAndView create(@ModelAttribute Schedule schedule) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/schedules");
 		scheduleService.add(schedule);

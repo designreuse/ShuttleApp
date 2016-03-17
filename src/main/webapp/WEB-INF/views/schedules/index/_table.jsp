@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+
+<c:set var="url">${pageContext.request.contextPath} </c:set>
 <div class="row padding-30">
 	<div class="col-lg-12">
 		<!-- /.panel-heading -->
@@ -15,40 +23,25 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="odd gradeX">
-						<td>Net Park</td>
-						<td>Edsa</td>
-						<td>7:45 am</td>
-						<td>ABC 123</td>
-						<td>Mang Jodi</td>
-						<td>
-							<button type="button" class="btn btn-xs btn-success"
-								data-dismiss="modal">
-								<i class="fa fa-edit fa-fw"></i>
-							</button>
-							<button type="button" class="btn btn-xs btn-danger"
-								data-dismiss="modal">
-								<i class="fa fa-times fa-fw"></i>
-							</button>
-						</td>
-					</tr>
-					<tr class="gradeU">
-						<td>Net Park</td>
-						<td>Market Market</td>
-						<td>8:00 am</td>
-						<td>DEF 456</td>
-						<td>Mang Kanor</td>
-						<td>
-							<button type="button" class="btn btn-xs btn-success"
-								data-dismiss="modal">
-								<i class="fa fa-edit fa-fw"></i>
-							</button>
-							<button type="button" class="btn btn-xs btn-danger"
-								data-dismiss="modal">
-								<i class="fa fa-times fa-fw"></i>
-							</button>
-						</td>
-					</tr>
+					<c:forEach var="schedule" items="${schedules}">
+						<tr class="odd gradeX">
+							<td>${schedule.from_location }</td>
+							<td>${schedule.to_location }</td>
+							<td>${schedule.dropoff_time }</td>
+							<td>${schedule.plate_num }</td>
+							<td>Mang Jodi</td>
+							<td>
+								<button type="button" class="btn btn-xs btn-success"
+									data-dismiss="modal">
+									<i class="fa fa-edit fa-fw"></i>
+								</button>
+								<button type="button" class="btn btn-xs btn-danger"
+									data-dismiss="modal">
+									<i class="fa fa-times fa-fw"></i>
+								</button>
+							</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
