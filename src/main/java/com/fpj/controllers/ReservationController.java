@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fpj.models.Car;
@@ -33,6 +35,9 @@ public class ReservationController {
 	@Autowired
 	private ReservationService reservationService;
 	
+	@Autowired
+	private ScheduleService scheduleService;
+	
 	@RequestMapping(value="/reservations")
 	public ModelAndView index(HttpServletResponse response) throws IOException{
 		return new ModelAndView(INDEX_PAGE);
@@ -42,25 +47,36 @@ public class ReservationController {
 	public ModelAndView add(HttpServletResponse response) throws IOException{
 		ModelAndView modelAndView = new ModelAndView(CREATE_PAGE);
 		List<Reservation> reservations = reservationService.getAll();
-		/*List<Car> cars = carService.getAll();
-		List<String> plate_nums = new ArrayList<String>();
+		List<Schedule> schedules = scheduleService.getAll();
+		List<String> to_locations = new ArrayList<String>();
+		List<String> from_locations = new ArrayList<String>();
 		
-		for(Car car:cars){
-			plate_nums.add(car.getPlate_num());
-		}*/
+		for(Schedule schedule:schedules){
+			to_locations.add(schedule.getTo_location());
+			from_locations.add(schedule.getFrom_location());
+		}
 		
 		// Just Text
 		modelAndView.addObject("table_head", TABLE_HEAD);
 		modelAndView.addObject("add_button", ADD_BUTTON);
 		
 		// Actual data
-		modelAndView.addObject("schedule", new Schedule());
-		//modelAndView.addObject("schedules", schedules);
+		modelAndView.addObject("reservation", new Reservation());
+		modelAndView.addObject("schedules", schedules);
+		modelAndView.addObject("reservations", reservations);
 		modelAndView.addObject("createLink", CREATE_LINK);
 		modelAndView.addObject("deleteLink", DELETE_LINK);
 		modelAndView.addObject("updateLink", UPDATE_LINK);
-		//modelAndView.addObject("vehicleList", plate_nums);
+		modelAndView.addObject("to_locations", to_locations);
+		modelAndView.addObject("from_locations", from_locations);
 		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/reservations/create", method=RequestMethod.POST)
+	public ModelAndView create(@ModelAttribute Reservation reservation) throws IOException{
+		ModelAndView modelAndView = new ModelAndView("redirect:/");
+		reservationService.add(reservation);
 		return modelAndView;
 	}
 }

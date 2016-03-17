@@ -13,7 +13,7 @@
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
-<form:form method="POST" modelAttribute="schedule"
+<form:form method="POST" modelAttribute="reservation"
 	action="${url}${createLink }">
 	<!-- /.row -->
 	<div class="row">
@@ -21,7 +21,7 @@
 			<label>Available schedule</label> 
 			<form:select class="form-control" path="sched_id">
 				<c:forEach var="schedule" items="${schedules}" >
-					<option value="${schedule.id}" label="${schedule.from_location } to ${schedule.to_location}"></option>
+					<option value="${schedule.sched_id}" label="${schedule.from_location } to ${schedule.to_location}"></option>
 				</c:forEach>
 			</form:select>
 		</div>
@@ -90,7 +90,7 @@
 	<!-- /#page-wrapper -->
 	<div class="row padding-10">
 		<div class="col-md-3">
-			<button type="button" class="btn btn-primary">Reserve chosen
+			<button type="submit" class="btn btn-primary">Reserve chosen
 				schedule</button>
 		</div>
 		<div class="col-md-1">
