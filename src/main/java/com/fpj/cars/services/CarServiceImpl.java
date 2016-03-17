@@ -22,15 +22,15 @@ public class CarServiceImpl implements CarService{
 	}
 
 	public void update(Car car) {
-		carDao.update(car);;
+		carDao.update(car);
 	}
 
-	public Car get(Integer car_id) {
-		return carDao.get(car_id);
+	public Car get(String plate_num) {
+		return carDao.get(plate_num);
 	}
 
-	public void delete(Integer car_id) {
-		carDao.delete(car_id);
+	public void delete(String plate_num) {
+		carDao.delete(plate_num);
 	}
 
 	public List<Car> getAll() {

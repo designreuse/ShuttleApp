@@ -27,13 +27,17 @@ public class ScheduleDaoImpl implements ScheduleDao {
 	public void update(Schedule schedule) {
 		Integer schedule_id = schedule.getSched_id();
 		Date dropoff_time = schedule.getDropoff_time();
+		Date dropoff_date = schedule.getDropoff_date();
 		String from_location = schedule.getFrom_location();
 		String to_location = schedule.getTo_location();
+		Integer car_id = schedule.getCar_id();
 		
 		Schedule schedule_update = get(schedule_id);
 		schedule_update.setDropoff_time(dropoff_time);
 		schedule_update.setFrom_location(from_location);
 		schedule_update.setTo_location(to_location);
+		schedule_update.setDropoff_date(dropoff_date);
+		schedule_update.setCar_id(car_id);
 		
 		getCurrentSession().update(schedule_update);
 	}

@@ -26,26 +26,24 @@ public class CarDaoImpl implements CarDao{
 	}
 
 	public void update(Car car) {
-		Integer car_id = car.getCar_id();
+		String plate_num = car.getPlate_num();
 		String color = car.getColor();
 		String model = car.getModel();
-		String plate_num = car.getPlate_num();
 		
-		Car car_update = get(car_id);
+		Car car_update = get(plate_num);
 		car_update.setColor(color);
 		car_update.setModel(model);
-		car_update.setPlate_num(plate_num);
 		getCurrentSession().update(car_update);
 		
 	}
 
-	public Car get(Integer car_id) {
-		Car car = (Car) getCurrentSession().get(Car.class, car_id);
+	public Car get(String plate_num) {
+		Car car = (Car) getCurrentSession().get(Car.class, plate_num);
 		return car;
 	}
 
-	public void delete(Integer car_id) {
-		Car car = get(car_id);
+	public void delete(String plate_num) {
+		Car car = get(plate_num);
 		
 		if(car != null)
 			getCurrentSession().delete(car);

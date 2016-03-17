@@ -63,16 +63,17 @@ public class CarController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/cars/delete/{dept_id}", method=RequestMethod.GET)
-	public ModelAndView delete(@PathVariable Integer car_id) throws IOException{
+	@RequestMapping(value="/cars/delete/{plate_num}", method=RequestMethod.GET)
+	public ModelAndView delete(@PathVariable String plate_num) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/cars");
-		carService.delete(car_id);
+		carService.delete(plate_num);
 		String message = "Successfully deleted.";
         modelAndView.addObject("message", message);
 		return modelAndView;
 	}
 	
-	public ModelAndView update(@ModelAttribute Car car, @PathVariable Integer car_id) throws IOException{
+	@RequestMapping(value="/cars/update/{plate_num}", method=RequestMethod.GET)
+	public ModelAndView update(@ModelAttribute Car car, @PathVariable String plate_num) throws IOException{
 		ModelAndView modelAndView = new ModelAndView("redirect:/cars");
 		carService.update(car);
 		String message = "Successfully updated.";

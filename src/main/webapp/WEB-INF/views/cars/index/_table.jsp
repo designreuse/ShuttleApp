@@ -24,7 +24,9 @@
 				<thead>
 					<tr>
 						<!-- <th>ID</th> -->
-						<th>Role</th>
+						<th>Plate Number</th>
+						<th>Vehicle Type</th>
+						<th>Seating Capacity</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -33,6 +35,8 @@
 						<tr class="gradeU">
 							<!-- <td>D${role.role_id }</td>  -->
 							<td>${car.plate_num }</td>
+							<td>${car.model }</td>
+							<td>${car.capacity }</td>
 							<td>
 								<button type="button" class="btn btn-xs btn-success"
 									data-dismiss="modal">
@@ -42,6 +46,7 @@
 									class="fa fa-times fa-fw"></i>
 							</a>
 							</td>
+							
 						</tr>
 					</c:forEach>
 				</tbody>

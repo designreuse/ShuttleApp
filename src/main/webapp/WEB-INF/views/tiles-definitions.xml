@@ -35,14 +35,13 @@
 		<put-attribute name="add_modal" value="/WEB-INF/views/cars/modals/add_modal.jsp" />
 	</definition>
 	
-	<definition name="schedules" template="/WEB-INF/views/application/adminpage/template.jsp">
+	<definition name="schedules" template="/WEB-INF/views/schedules/scheduletemplate/template.jsp">
 		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
 		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
 		<put-attribute name="navbar" value="/WEB-INF/views/application/_navbar.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/views/application/_foot.jsp" />
 		<put-attribute name="table_buttons" value="/WEB-INF/views/application/_table_buttons.jsp" />
 		<put-attribute name="table" value="/WEB-INF/views/schedules/index/_table.jsp" />
-		<put-attribute name="add_modal" value="/WEB-INF/views/schedules/modals/add_modal.jsp" />
 		<put-attribute name="new_sched" value="/WEB-INF/views/schedules/index/_new_sched.jsp" />
 
 	</definition>

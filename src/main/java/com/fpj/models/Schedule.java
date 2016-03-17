@@ -18,6 +18,21 @@ public class Schedule {
 	private String from_location;
 	private String to_location;
 	private Date dropoff_time;
+	private Date dropoff_date;
+	private Integer car_id;
+	
+	public Date getDropoff_date() {
+		return dropoff_date;
+	}
+	public void setDropoff_date(Date dropoff_date) {
+		this.dropoff_date = dropoff_date;
+	}
+	public Integer getCar_id() {
+		return car_id;
+	}
+	public void setCar_id(Integer car_id) {
+		this.car_id = car_id;
+	}
 	public Integer getSched_id() {
 		return sched_id;
 	}
