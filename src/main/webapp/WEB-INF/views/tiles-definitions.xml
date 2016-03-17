@@ -46,12 +46,13 @@
 
 	</definition>
 	
-	<definition name="reservations" template="/WEB-INF/views/application/adminpage/template.jsp">
+	<definition name="reservations_create" template="/WEB-INF/views/application/adminpage/template.jsp">
 		<put-attribute name="head" value="/WEB-INF/views/application/_head.jsp" />
 		<put-attribute name="sidebar" value="/WEB-INF/views/application/_sidebar.jsp" />
 		<put-attribute name="navbar" value="/WEB-INF/views/application/_navbar.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/views/application/_foot.jsp" />
-		<put-attribute name="table_buttons" value="/WEB-INF/views/application/_table_buttons.jsp" />
+		<put-attribute name="table" value="/WEB-INF/views/reservations/add/_table.jsp" />
+		<put-attribute name="add_modal" value="/WEB-INF/views/reservations/_blank.jsp" />
 	</definition>
 	
 	<definition name="table_buttons" template="/WEB-INF/views/application/_table_buttons.jsp">
