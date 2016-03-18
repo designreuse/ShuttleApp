@@ -5,7 +5,7 @@
 
     if(uname == "emp01" && pword == "lawson123")
     {
-        window.location = "index.html";
+        window.location = "redirect";
     }
 
     else

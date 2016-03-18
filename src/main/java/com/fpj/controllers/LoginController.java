@@ -15,4 +15,9 @@ public class LoginController {
 	public ModelAndView index(HttpServletResponse response) throws IOException{
 		return new ModelAndView("login/login");
 	}
+	
+	@RequestMapping(value="/redirect")
+	public ModelAndView redirect(HttpServletResponse response) throws IOException{
+		return new ModelAndView("redirect:/");
+	}
 }
