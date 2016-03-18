@@ -8,6 +8,19 @@
 <div class="navbar-default sidebar" role="navigation">
 	<div class="sidebar-nav navbar-collapse">
 		<ul class="nav" id="side-menu">
+			</br>
+			<li class="">
+				<div class="input-group padding-auto">
+					<img src="${url}/assets/rsrc/dp.jpg" class="dp">
+				</div>
+				<div class="padding-b-10">
+					<center>
+						<h4>
+							Name Placeholder</br> <small>Placeholder</small></br>
+						</h4>
+					</center>
+				</div> <!-- /input-group -->
+			</li>
 			<li><a class="main-panel" href="#"><i class="fa fa-fw"></i>Shuttle
 					Service Reservation<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
@@ -30,5 +43,6 @@
 				</ul> <!-- /.nav-second-level --></li>
 		</ul>
 	</div>
+	<!-- /.sidebar-collapse -->
 </div>
 <!-- /.sidebar-collapse -->
